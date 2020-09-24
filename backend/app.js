@@ -11,6 +11,10 @@ const Vendor = require('./models/Vendor');
 
 
 const app = express();
+const http=require('http').createServer(app);
+
+//middleware for chat
+app.use(express.static(__dirname+"/public"))
 
 // cors middleware
 app.use(cors()); 
@@ -120,10 +124,22 @@ app.use((req, res, next) => {
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 app.use('/products', require('./routes/products'));
-app.use('/vendor', require('./routes/vendor'));
+// app.use('/vendor', require('./routes/vendor'));
 app.use('/admin', require('./routes/admin'));
 app.use('/chat', require('./routes/chat'));
+app.use('/chatApp',require('./routes/chatApp-router'));
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+//app.listen(PORT, console.log(`Server started on port ${PORT}`));
+http.listen(PORT,() => {
+  console.log(`listening on port ${PORT}`);
+})
+
+//socket
+
+const io=require('socket.io')(http);
+
+io.on('connection',(socket) => {
+  console.log('Connected')
+})
