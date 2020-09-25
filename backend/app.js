@@ -1,4 +1,4 @@
-const express = require('express'); 
+const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
@@ -17,14 +17,14 @@ const http=require('http').createServer(app);
 app.use(express.static(__dirname+"/public"))
 
 // cors middleware
-app.use(cors()); 
+app.use(cors());
 app.use(express.json());
 
 // Passport config
 require('./config/passport')(passport);
 
 // DB Config
-const db = require('./config/keys').mongoURI; 
+const db = require('./config/keys').mongoURI;
 
 // Connect to Mongo
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -40,7 +40,7 @@ app.use(express.urlencoded({ extended: false}));
 
 // Express Session
 app.use(session({
-    secret: 'secret', 
+    secret: 'secret',
     resave: false,
     saveUninitialized: false,
 }));
@@ -141,5 +141,8 @@ http.listen(PORT,() => {
 const io=require('socket.io')(http);
 
 io.on('connection',(socket) => {
-  console.log('Connected')
+  console.log('Connected...')
+  socket.on('message',(msg) =>{
+      socket.broadcast.emit('message',msg);
+  })
 })
