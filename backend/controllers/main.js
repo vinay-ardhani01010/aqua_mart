@@ -4,6 +4,7 @@ exports.getProduct = (req, res, next) => {
     Product.findById(req.params.id)
       .then(product => {
         return res.render('product.ejs', {
+           product:product,
             name: product.name ,
             description: product.description,
             price: product.price,
@@ -13,6 +14,8 @@ exports.getProduct = (req, res, next) => {
             brand: product.brand,
             vendorlocation: product.vendorlocation,
             vendorid : product.vendorid,
+            id:product._id,
+            Auth:product.isAuthorised,
             path: '/products'
         })
       })
