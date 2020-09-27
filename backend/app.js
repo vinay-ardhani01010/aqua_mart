@@ -127,7 +127,8 @@ app.use('/products', require('./routes/products'));
 // app.use('/vendor', require('./routes/vendor'));
 app.use('/admin', require('./routes/admin'));
 app.use('/chat', require('./routes/chat'));
-app.use('/chatApp',require('./routes/chatApp-router'));
+app.use('/chatApp',require('./routes/chatApp'))
+
 
 const PORT = process.env.PORT || 5000;
 
