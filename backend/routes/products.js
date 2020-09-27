@@ -3,56 +3,6 @@ let Product = require('../models/product.model');
 const mainController = require('../controllers/main');
 const isUser = require('../middleware/is-user');
 
-// locolhost:5000/products/
-// router.route('/').get(isUser, (req, res) => { 
-//     Product.find()
-//         .then(products => res.json(products))
-//         .catch(err => res.status(400).json('Error: ' + err)); 
-
-
-//         if (req.query.location !=''){
-//             const userlocation = req.user.location;
-//             Product.find( {vendorlocation: userlocation},(err,data)=>{
-//                 res.render('/',{products : products })
-//                 })
-//             }
-//         if (req.query.price!=''){
-//                 if (req.query.price == "high"){
-//                         Product.find().sort({price:-1})
-//                         .then((err,products) => {res.render('/', {products :products})
-//                 })
-//             }
-//                 else {
-            
-//             Product.find().sort({price:1})
-//             .then((err,products) => {res.render('/', {products : products})
-//                 })
-//             }
-//         }
-        
-//         if(req.query.category!='')
-//         {
-//         const category = req.query.cat
-//         Product.find( {category: category}, (err, data)=>{
-//             res.render('/',{products : products })
-//         })
-    
-//     }
-//     if (req.query.brand!='')
-//         {
-//     const brandname = req.query.brand
-//     Product.find( {brand: brandname },(err, data)=>{
-//         res.render('/',{products : products })
-//     })
-//         }
-//     Product.find({}, function(err, data){
-//         res.render('product.ejs', { 
-//            product : data[0]
-//         });
-//     });
-// });
-
-// locolhost:5000/products/add
 router.route('/add').post((req, res) => {
     const name = req.body.name;
     const vendorid = req.session.user._id;
@@ -85,6 +35,50 @@ router.route('/add').post((req, res) => {
 
 // /products/:id
 router.get('/:id', isUser, mainController.getProduct);
+router.get('/auth/:id',(req, res, next) => {
+    Product.findById(req.params.id)
+      .then(product => {
+        return res.render('productauth.ejs', {
+           product:product,
+            name: product.name ,
+            description: product.description,
+            price: product.price,
+            vendorname: product.vendorname,
+            imgurl: product.imgurl,
+            category: product.category,
+            brand: product.brand,
+            vendorlocation: product.vendorlocation,
+            vendorid : product.vendorid,
+            id:product._id,
+            Auth:product.isAuthorised,
+            path: '/products'
+        })
+      })
+      
+
+    })
+    router.get('/unauth/:id',(req, res, next) => {
+        Product.findById(req.params.id)
+          .then(product => {
+            return res.render('productunauth.ejs', {
+               product:product,
+                name: product.name ,
+                description: product.description,
+                price: product.price,
+                vendorname: product.vendorname,
+                imgurl: product.imgurl,
+                category: product.category,
+                brand: product.brand,
+                vendorlocation: product.vendorlocation,
+                vendorid : product.vendorid,
+                id:product._id,
+                Auth:product.isAuthorised,
+                path: '/products'
+            })
+          })
+          
+    
+        })
 
 // delete product
 router.route('/:id').delete((req, res) => {
@@ -122,5 +116,44 @@ router.route('/update/:id').get((req, res) => {
         });
     });
 });
+router.route('/delete/:id').get((req,res)=>{
+    Product.findByIdAndRemove(req.params.id)
+    .then((resp)=>{
+        res.statusCode = 200
+        res.redirect('/admindashboard')
+     },(err)=>{
+        console.log(err)
+     }).catch((err)=>{
+        console.log(err)
+     })
+})
+router.route('/unauthorize/:id').get((req,res)=>{
+    Product.findById(req.params.id)
+    .then((product)=>{
+        product.isAuthorised = false
+        product.save()
+        .then(()=>res.redirect('/authproducts')) 
+        .catch(err => res.status(400).json('Error: '+ err));
+     },(err)=>{
+        console.log(err)
+     }).catch((err)=>{
+        console.log(err)
+     })
+})
+router.route('/authorize/:id').get((req,res)=>{
+    Product.findById(req.params.id)
+    .then((product)=>{
+        product.isAuthorised = true
+        product.save()
+        .then(()=>res.redirect('/unauthproducts')) 
+        .catch(err => res.status(400).json('Error: '+ err));
+     },(err)=>{
+        console.log(err)
+     }).catch((err)=>{
+        console.log(err)
+     })
+})
+router.route('/auth/:id')
+
 
 module.exports = router;
