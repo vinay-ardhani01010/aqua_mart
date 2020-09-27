@@ -470,40 +470,43 @@ margin-bottom: 5px;
   border: 1px solid red;
 
 }
+.col-sm-8,.col-sm-2{
+    background:#3383FF;
+  }
 </style>
 </head>
-<body>
- 
- 
-<div class="container-fluid">
+<body onload="filterSelection('1')" style="font-family:candara">
   <div class="row"  >
-    <div class="col-sm-3">
-     <img src="https://aquamartstorage.blob.core.windows.net/images/logo.jpg" id="logo">
- 
+    <div class="col-sm-2">
+     <img src="/images/logo.jpg" id="logo">
     </div>
-     <div class="col-sm-7">
-      <a href="/dashboard"><button type="button" class="btn btn-default" id="home" style="font-size: 18px;"><b>HOME</b></button></a>
-      <a href="/aboutus"><button type="button" class="btn btn-default" id="about" style="font-size: 18px;"><b>ABOUT US</b></button></a>
-      <a href="/services"><button type="button" class="btn btn-default" id="services" style="font-size: 18px;"><b>SERVICES</b></button></a>
-      <a href="/contactus"><button type="button" class="btn btn-default" id="contact" style="font-size: 18px;"><b>CONTACT US</b></button></a>
-      <a style="position: relative;" href="/chat"><button type="button" class="btn btn-default" id="services" style="font-size: 18px;"><b>MESSAGES <span  class="count"><h4 id="count">0</h4></span>
+    <div class="col-sm-8 pt-3">
+     <a href="/dashboard"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;color:white"><b>HOME</b></button></a>
+      <a href="/aboutus"><button type="button" class="btn btn-default" id="about" style="font-size: 20px; color:white"><b>ABOUT US</b></button></a>
+      <a href="/services"><button type="button" class="btn btn-default" id="services" style="font-size: 20px;color:white"><b>SERVICES</b></button></a>
+      <a href="/contactus"><button type="button" class="btn btn-default" id="contact" style="font-size: 20px;color:white"><b>CONTACT US</b></button></a>
+      <a style="position: relative;" href="/chatApp/chatApp"><button type="button" class="btn btn-default" id="services" style="font-size: 20px;color:white"><b>MESSAGES <span  class="count"><h4 id="count">0</h4></span>
       </b></button></a>
-      <a href="/meettheteam"><button type="button" class="btn btn-default" id="meet" style="font-size: 18px;"><b>MEET THE TEAM</b></button></a>
+      <a href="/meettheteam"><button type="button" class="btn btn-default" id="meet" style="font-size: 20px;color:white"><b>MEET THE TEAM</b></button></a>
     </div>
-      <div class="col-sm-2">
-        <a href="/users/logout" class="ghost-button2" id="logout"><i class='fas fa-user-alt' style="font-size: 20px;">
-        </i><font style="font-size: 20px;">  Logout</font></a>
+      <div class="col-sm-2 pt-4">
+        <a href="/users/logout" class="ghost-button2" id="logout"><i class='fas fa-user-alt' style="font-size: 20px; color:white">
+        </i><font style="font-size: 20px; color: white">  Logout</font></a>
         </div>
     </div>
+  
+ 
+
  
 <p id="space"></p>
  
 <div class="row">
  
-  <div class="col-sm-4">
+  <div class="col-sm-3 ml-4">
     <img src="<%= imgurl %>" style="width:360px;height:400px; border-radius: 8px; padding: 5px;border-style:solid;">
+    
   </div>
-  <div class="col-sm-6">
+  <div class="col">
    <h3> <%= name %> <br></h3><hr>
  
   <b>Company Name</b>: <%= brand %><br>
@@ -511,7 +514,15 @@ margin-bottom: 5px;
   <b>MRP:</b> Rs.<%= price %><br>
   <b>Vendor Name:</b><%= vendorname %> <br>
   <b>Vendor's Location:</b> <%= vendorlocation %><br><br>
-  <button type="button" class="btn btn-primary btn-md" style="width:200px" data-toggle="modal" data-target="#myModal">Inquire</button><br><br>
+  <div class = 'row'>
+    <div class = "col-md-auto">
+      <button type="button" class="btn btn-primary btn-md" style="width:200px" data-toggle="modal" data-target="#myModal">Inquire</button><br><br>
+    </div>
+    <div class = "col-md-auto">
+      <a href="/products/update/<%= id%>" class="btn btn-primary btn-md" style="width:200px" role="button">Update</a>
+    </div>
+  </div>
+  
   <!----------------modal------------------->
   <div class="modal fade" id="myModal" >
     <div class="modal-dialog modal-xl">
