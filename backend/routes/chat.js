@@ -1,10 +1,10 @@
 const Vendor = require('../models/Vendor');
 const User = require('../models/user.model')
-const Message = require('../models/messages')
+const Message = require('../models/messages_models')
 var myPromise = require('promise')
 const express = require('express');
 const { Router } = require('express');
-const messages = require('../models/messages');
+const messages = require('../models/messages_models');
 const router = express.Router();
 
 /** 
