@@ -9,7 +9,7 @@ const MessageSchema = new mongoose.Schema({
     default:"Not Resolved",
     enum:["Not Resolved,Resolving,Resolved"]
   },
-  description: {
+  message: {
     type: String,
     required: true
   },
