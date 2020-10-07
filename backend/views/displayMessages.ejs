@@ -19,7 +19,14 @@
         .col-sm-8,.col-sm-2{
     background:#3383FF;
   }
-    </style>
+  #my_header{
+    display:table;
+    margin:auto;
+  }
+  #my_header_div{
+    display:table-cell;
+  }
+ </style>
 </head>
 <body onload="filterSelection('1')" style="font-family:candara"></body>
 <div class="row"  >
@@ -36,54 +43,33 @@
         </i><font style="font-size: 20px; color: white">  Logout</font></a>
         </div>
     </div>
-    <div class="container body-content">
-        <div class="row justify-content-start" style="padding-top:10px;">
-<button class="btn btn-primary">List of messages</button>
-
-</div>
-                <div class="row justify-content-center" style="padding-top:10px;">
-<p class="text-black-50">
-    Messaging list
-    <br />
-    List 2.
-    <br />
-    List 3
-                </div>
-                <div class="row justify-content-start" style="padding-top:10px;">
-<label>sample message</label>
-
-
-
-                </div>
-                <div class="row justify-content-start" style="padding-top:10px;">
-<label>message status</label>
-
-
-
-                </div>
-                <div class="row justify-content-start" style="padding-top:10px;">
-
-                <div class="col" style="padding-top:10px;">
-<label>short description</label>
-
-
-
-                </div>
-                <div class="col" style="padding-top:10px;">
-<button class="btn btn-primary">view message</button>
-
-
-                </div>
-                </div>
-
-
-</div>
-
-
-
-    </div>
-   
+    <div class="jumbotron" style="padding:4px;">
+      <div class="container" style="padding:5px;">
+        <p >Message status: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vendor Category: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vendor Name: &nbsp;&nbsp;&nbsp;&nbsp; Date:</p>
+        
+        <p> Message 1 short description.................. </p><a class="btn btn-primary btn-lg" href="#" role="button">view full message &raquo;</a></p> 
+        <button type="email">Contact Vendor</button>
+      </div>
+  
+      </div>
+      <div class="jumbotron" style="padding:4px;">
+        <div class="container" style="padding:5px;">
+          <p >Message status: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vendor Category: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vendor Name: &nbsp;&nbsp;&nbsp;&nbsp; Date:</p>
+          
+          <p> Message 2 short description.................. </p><a class="btn btn-primary btn-lg" href="#" role="button">view full message &raquo;</a></p> 
+          <button type="email">Contact Vendor</button>
+        </div>
     
+        </div>
+        <div class="jumbotron" style="padding:4px;">
+          <div class="container" style="padding:5px;">
+            <p >Message status: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vendor Category: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Vendor Name: &nbsp;&nbsp;&nbsp;&nbsp; Date:</p>
+            
+            <p> Message 3 short description.................. </p><a class="btn btn-primary btn-lg" href="#" role="button">view full message &raquo;</a></p> 
+            <button type="email">Contact Vendor</button>
+          </div>
+      
+          </div>
+                   
 </body>
 </html>
-
