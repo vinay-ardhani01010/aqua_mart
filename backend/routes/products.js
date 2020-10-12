@@ -2,7 +2,10 @@ const router = require('express').Router();
 let Product = require('../models/product.model');
 const mainController = require('../controllers/main');
 const isUser = require('../middleware/is-user');
-
+//ADD PODUCTS
+router.route('/additem').get((req,res)=>{
+    res.render('addproduct.ejs')
+})
 router.route('/add').post((req, res) => {
     const name = req.body.name;
     const vendorid = req.session.user._id;
