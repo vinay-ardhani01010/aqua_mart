@@ -3,6 +3,7 @@ const router = express.Router();
 const authController = require('../controllers/vendor');
 const isVendor = require('../middleware/is-vendor');
 const Message = require('../models/messages');
+const vendorsControllers = require('../controllers/vendor');
 
 //Vendor home route
 router.get('/', authController.getHome);
@@ -36,5 +37,8 @@ router.get('/getunseen',(req, res)=>{
         res.status(200).send(data.length.toString())
      });
 });
+
+//list of vendors for admin
+router.get('/vendorsForAdmin',vendorsControllers);
 
 module.exports = router;

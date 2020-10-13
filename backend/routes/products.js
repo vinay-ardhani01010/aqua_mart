@@ -2,6 +2,8 @@ const router = require('express').Router();
 let Product = require('../models/product.model');
 const mainController = require('../controllers/main');
 const isUser = require('../middleware/is-user');
+const productControllers = require('../controllers/product-controllers');
+
 
 router.route('/add').post((req, res) => {
     const name = req.body.name;
@@ -154,6 +156,10 @@ router.route('/authorize/:id').get((req,res)=>{
      })
 })
 router.route('/auth/:id')
+
+//list of products when admin clicks on a vendor
+
+router.get('/productsFromVendorForAdmin/:productId',productControllers.getProductsFromVendorForAdmin);
 
 
 module.exports = router;

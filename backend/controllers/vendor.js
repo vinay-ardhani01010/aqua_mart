@@ -275,3 +275,19 @@ exports.postContact = (req, res, next) => {
         console.log(data)
     })*/
 };
+
+//list of vendors for admin
+//route -vendorsForAdmin
+
+const getVendorsForAdmin= (req,res,next) => {
+    Vendor.find()
+    .then(vendors => {
+        return res.render('',{
+            vendors,
+            path:''
+        })
+    })
+}
+
+
+exports.getVendorsForAdmin=getVendorsForAdmin;
