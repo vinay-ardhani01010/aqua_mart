@@ -19,6 +19,16 @@
         .col-sm-8,.col-sm-2{
     background:#3383FF;
   }
+  .ghost-button2 {
+        display: inline-block;
+        width: 150px;
+        padding: 8px;
+        color:black;
+        border: 1.5px solid black;
+        text-align: center;
+        outline: none;
+        text-decoration: none;
+      }
   #my_header{
     display:table;
     margin:auto;
@@ -44,24 +54,49 @@
 	border-bottom:solid 2px blue;
 	padding:2px;
 }
+.col-sm-8,.col-sm-2{
+    background:#3383FF;
+  }
  </style>
 </head>
 <body onload="filterSelection('1')" style="font-family:candara"></body>
-<div class="row"  >
+<div class=" row"  >
     <div class="col-sm-2">
      <img src="/images/logo.jpg" id="logo">
     </div>
     <div class="col-sm-8 pt-3">
-      <a href="/"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">HOME</b></button></a>
-      <a href="/products"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">PRODUCTS</b></button></a>
-      <a href="/dashboard"><button type="button" class="btn btn-default" id="services" style="font-size: 20px;"><b style="color: white;">DASHBOARD</b></button></a>
+    <div class = "row">
+      <div class = " ">
+        <a href="/"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">HOME</b></button></a>
+      </div>
+      <div class = " ">
+        <a href="/dashboard"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">DASHBOARD</b></button></a>
+      </div>
+      <div class = "">
+        <div class="dropdown col m mt-4">
+          <button class="btn btn-primary dropdown-toggle mt-2" type="button" data-toggle="dropdown">PRODUCTS
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="/authproducts">Authorized</a></li>
+            <li><a href="/unauthproducts">Unauthorized</a></li>
+          </ul>
+        </div>
+      </div>
+   
+    </div>
+    
     </div>
       <div class="col-sm-2 pt-4">
         <a href="/users/logout" class="ghost-button2" id="logout"><i class='fas fa-user-alt' style="font-size: 20px; color:white">
         </i><font style="font-size: 20px; color: white">  Logout</font></a>
+          <div class="col-sm-2 pt-4">
+            <a href="/products/additem" class="ghost-button2 pr-2" style = "width:170px; " id="add"><i class="fa fa-plus"  style="font-size: 20px; color:white">
+          </i><font style="font-size: 20px; color: white">ADD</font></a>
+           
         </div>
-    </div>
-    
+      </div>
+        
+   
 	<div id="outter">
 		<div><p ><div class="container">Message status: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div><div class="container">Vendor Category: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div><div class="container">Vendor Name: &nbsp;&nbsp;&nbsp;&nbsp; </div><div class="container">Date:</div></p></div>
 		<div><div class="container1"><p> Message 1 short description.................. </p></div><div class="container"><a class="btn btn-primary btn-lg" href="#" role="button">view full message &raquo;</a></div><div class="container">Vendor Mail Id: &nbsp;&nbsp;&nbsp;&nbsp; </div> </div>
