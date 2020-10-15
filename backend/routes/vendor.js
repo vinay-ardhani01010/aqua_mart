@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/vendor');
 const isVendor = require('../middleware/is-vendor');
-const Message = require('../models/messages');
+const Message = require('../models/messages_models');
 const vendorsControllers = require('../controllers/vendor');
 
 //Vendor home route
