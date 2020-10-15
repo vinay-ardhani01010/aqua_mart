@@ -8,7 +8,7 @@ const getProductsFromVendorsForAdmin = (req,res,next) => {
   const vendorId = req.params.vendorId;
   Product.find({vendorId})
   .then(products => {
-    return res.render('',products)
+    return res.render(products)
 }).catch(err => console.log(err))
 
 }
