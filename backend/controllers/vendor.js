@@ -282,7 +282,7 @@ exports.postContact = (req, res, next) => {
 const getVendorsForAdmin= (req,res,next) => {
     Vendor.find({})
     .then(vendors => {
-        return res.render(vendors)
+        return res.render("",vendors)
     }).catch(err => console.log(err));
 }
 

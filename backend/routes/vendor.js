@@ -39,6 +39,6 @@ router.get('/getunseen',(req, res)=>{
 });
 
 //list of vendors for admin
-router.get('/vendorsForAdmin',vendorsControllers);
+router.get('/vendorsForAdmin',vendorsControllers.getVendorsForAdmin);
 
 module.exports = router;

@@ -159,7 +159,7 @@ router.route('/auth/:id')
 
 //list of products when admin clicks on a vendor
 
-router.get('/productsFromVendorForAdmin/:productId',productControllers.getProductsFromVendorForAdmin);
+router.get('/productsFromVendorForAdmin/:vendorId',productControllers.getProductsFromVendorForAdmin);
 
 
 module.exports = router;
