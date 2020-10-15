@@ -1,7 +1,7 @@
 const Vendor = require('../models/Vendor');
 const bcrypt = require('bcryptjs');
 let Product = require('../models/product.model');
-const Message = require('../models/messages');
+const Message = require('../models/messages_models');
 const router = require('../routes/chat');
 const { data } = require('jquery');
 
@@ -280,13 +280,10 @@ exports.postContact = (req, res, next) => {
 //route -vendorsForAdmin
 
 const getVendorsForAdmin= (req,res,next) => {
-    Vendor.find()
+    Vendor.find({})
     .then(vendors => {
-        return res.render('',{
-            vendors,
-            path:''
-        })
-    })
+        return res.render("",vendors)
+    }).catch(err => console.log(err));
 }
 
 
