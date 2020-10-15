@@ -36,13 +36,13 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100%;
- 
+
       }
       .card--featured{
         cursor: pointer;
       }
       footer{
- 
+
         bottom: 0;
         }
         .footer-distributed{
@@ -52,58 +52,58 @@
         width: 100%;
         text-align: left;
         font: bold 16px sans-serif;
- 
+
         padding: 55px 50px;
         margin-top: 80px;
         }
- 
+
         .footer-distributed .footer-left,
         .footer-distributed .footer-center,
         .footer-distributed .footer-right{
         display: inline-block;
         vertical-align: top;
         }
- 
+
         .footer-distributed .footer-left{
         width: 40%;
         }
- 
+
         .footer-distributed h3{
         color:  #ffffff;
         font: normal 36px 'Cookie', cursive;
         margin: 0;
         }
- 
+
         .footer-distributed h3 span{
         color:  #5383d3;
         }
- 
- 
+
+
         .footer-distributed .footer-links{
         color:  #ffffff;
         margin: 20px 0 12px;
         padding: 0;
         }
- 
+
         .footer-distributed .footer-links a{
         display:inline-block;
         line-height: 1.8;
         text-decoration: none;
         color:  inherit;
         }
- 
+
         .footer-distributed .footer-company-name{
         color:  #8f9296;
         font-size: 14px;
         font-weight: normal;
         margin: 0;
         }
- 
- 
+
+
         .footer-distributed .footer-center{
         width: 35%;
         }
- 
+
         .footer-distributed .footer-center i{
         background-color:  #33383b;
         color: #ffffff;
@@ -116,35 +116,35 @@
         margin: 10px 15px;
         vertical-align: middle;
         }
- 
+
         .footer-distributed .footer-center i.fa-envelope{
         font-size: 17px;
         line-height: 38px;
         }
- 
+
         .footer-distributed .footer-center p{
         display: inline-block;
         color: #ffffff;
         vertical-align: middle;
         margin:0;
         }
- 
+
         .footer-distributed .footer-center p span{
         display:block;
         font-weight: normal;
         font-size:14px;
         line-height:2;
         }
- 
+
         .footer-distributed .footer-center p a{
         color:  #5383d3;
         text-decoration: none;;
         }
- 
+
         .footer-distributed .footer-right{
         width: 20%;
         }
- 
+
         .footer-distributed .footer-company-about{
         line-height: 20px;
         color:  #92999f;
@@ -152,7 +152,7 @@
         font-weight: normal;
         margin: 0;
         }
- 
+
         .footer-distributed .footer-company-about span{
         display: block;
         color:  #ffffff;
@@ -160,11 +160,11 @@
         font-weight: bold;
         margin-bottom: 20px;
         }
- 
+
         .footer-distributed .footer-icons{
         margin-top: 25px;
         }
- 
+
         .footer-distributed .footer-icons a{
         display: inline-block;
         width: 35px;
@@ -172,24 +172,24 @@
         cursor: pointer;
         background-color:  #33383b;
         border-radius: 2px;
- 
+
         font-size: 20px;
         color: #ffffff;
         text-align: center;
         line-height: 35px;
- 
+
         margin-right: 3px;
         margin-bottom: 5px;
         }
- 
- 
+
+
         @media (max-width: 880px) {
- 
+
         .footer-distributed{
           font: bold 14px sans-serif;
- 
+
         }
- 
+
         .footer-distributed .footer-left,
         .footer-distributed .footer-center,
         .footer-distributed .footer-right{
@@ -198,7 +198,7 @@
           margin-bottom: 40px;
           text-align: center;
         }
- 
+
         .footer-distributed .footer-center i{
           margin-left: 0;
         }
@@ -212,14 +212,14 @@
         width: 15px;
              }
       .count h4{
-        
+
         background-color: red;
         line-height: 15px;
         font-size: 19px;
         color: white;
         border-radius: 10px 10px;
         border: 1px solid red;
-   
+
       }
   </style>
 </head>
@@ -234,7 +234,7 @@
           //console.log(product);
           //console.log(product._id);
           displayString += `<li class="row list-group-item">
-                              <span style=""><a href="/products/${product._id}"> ${product.name}</a></span> 
+                              <span style=""><a href="/products/${product._id}"> ${product.name}</a></span>
                             </li>`;
         });
       }
@@ -243,7 +243,7 @@
     const searchProduct = (e) => {
       console.log(e.value);
       if(e.value === ''){
-        $('#results-display').html(''); 
+        $('#results-display').html('');
       }else{
         $("#results").html(e.value)
         $.get(`/api/main/search?text=${e.value}`, (data, status) => {
@@ -252,7 +252,7 @@
       }
     }
   </script>
- 
+
  <div class="row"  >
     <div class="col-sm-2">
      <img src="/images/logo.jpg" id="logo">
@@ -262,17 +262,22 @@
       <a href="/aboutus"><button type="button" class="btn btn-default" id="about" style="font-size: 20px;"><b>ABOUT US</b></button></a>
       <a href="/services"><button type="button" class="btn btn-default" id="services" style="font-size: 20px;"><b>SERVICES</b></button></a>
       <a href="/contactus"><button type="button" class="btn btn-default" id="contact" style="font-size: 20px;"><b>CONTACT US</b></button></a>
-      <a style="position: relative;" href="/chat"><button type="button" class="btn btn-default" id="services" style="font-size: 20px;"><b>MESSAGES <!--<span  class="count"><h4 id="count">0</h4></span>--></b></button></a>
+      <!-- <a style="position: relative;" href="/chat"><button type="button" class="btn btn-default" id="services" style="font-size: 20px;"><b>MESSAGES</b></button></a> -->
       <a href="/team"><button type="button" class="btn btn-default" id="meet" style="font-size: 20px;"><b>MEET THE TEAM</b></button></a>
+      <a href="/analysis"><button type="button" class="btn btn-default" id="meet" style="font-size: 20px;"><b>ANALYSIS</b></button></a>
+      <a href="/displayMessages"><button type="button" class="btn btn-default" id="meet" style="font-size: 20px;"><b>Messages</b></button></a>
+      <a href="/analysis"><button type="button" class="btn btn-default" id="meet" style="font-size: 20px;"><b>List of Vendor</b></button></a>
+      <a href="/analysis"><button type="button" class="btn btn-default" id="meet" style="font-size: 20px;"><b>List of Users</b></button></a>
+
     </div>
       <div class="col-sm-2">
         <a href="/users/logout" class="ghost-button2" id="logout"><i class='fas fa-user-alt' style="font-size: 20px;">
         </i><font style="font-size: 20px;">  Logout</font></a>
         </div>
     </div>
- 
- 
- 
+
+
+
 <!----------------CAROUSEL--------------------------------------------------------------------------->
 <div id="car" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
@@ -286,21 +291,21 @@
       <div class="carousel-caption">
         <h3>Welcome to Jaljeevika</h3>
         <p>WE ARE AT YOUR SERVICE</p>
-      </div>   
+      </div>
     </div>
     <div class="carousel-item">
       <img src="/images/car1.jpg" height="400">
       <div class="carousel-caption">
         <h3>Welcome to Jaljeevika</h3>
         <p>WE ARE AT YOUR SERVICE</p>
-      </div>   
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="/images/car3.jpg" height="400"> 
+      <img src="/images/car3.jpg" height="400">
       <div class="carousel-caption">
        <h3>Welcome to Jaljeevika</h3>
         <p>WE ARE AT YOUR SERVICE</p>
-      </div>   
+      </div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#car" data-slide="prev">
@@ -312,7 +317,7 @@
 </div>
 <br>
 <!----------------------search bar---------------------------------------------->
- 
+
       <p id="space"></p>
       <center></span><input class="form-control" oninput="searchProduct(this);" id="search-product"
        style=" width: 900px;border-style:solid;border-color:rgb(40, 104, 187);border-width: 2px;height:55px" type="text"
@@ -320,21 +325,21 @@
      <ul class="list-group" id="results-display" style="width:380px"></ul></center>
   <!--------------------------------------------------------------------------->
 <BR>
- 
+
   <!------------filter--------------------------------------------------------------------->
   <div class="row">
   <div style="width:25%">
- 
+
       <button type="button" class="btn btn-primary" id="filter" style="width:330px;">FILTER</button>
         <ul class="list-group" id="filt_list" style="width:330px">
         <form method="GET" action="/filter">
- 
+
         <br>
         <!--------category-------------------->
- 
+
         <button type="button" class="btn btn-primary btn-sm" id="cat" style="width:330px">CATEGORY</button>
         <div style="border-style:groove;width:330px">
-        <ul class="list-group" id="cat_list"style="width:330px">	
+        <ul class="list-group" id="cat_list"style="width:330px">
           <% cats.forEach(cat=>{ %>
            <div class="form-check" style="width:330px">
           <input class="form-check-input" type="radio" name="category" id="Feed" value="<%=cat %>" >
@@ -343,12 +348,12 @@
            </label>
         </div>
         <%})%>
- 
+
         </ul></div>
- 
- 
+
+
         <!--------company------------------------>
- 
+
         <button type="button" class="btn btn-primary btn-sm" id="compan" style="width:330px">COMPANY</button>
         <div style="border-style:groove;width:330px">
         <ul class="list-group" id="compan_list" style="width:330px">
@@ -360,20 +365,20 @@
           </label>
         </div>
         <%})%>
- 
- 
- 
+
+
+
         </ul></div>
- 
- 
+
+
         <!---------------------price-------------------------->
- 
+
         <button type="button" class="btn btn-primary btn-sm" id="pri" style="width:330px">PRICE</button>
         <div style="border-style:groove;width:330px">
-        <ul class="list-group" id="pri_list" style="width:330px">	
+        <ul class="list-group" id="pri_list" style="width:330px">
            <div class="form-check" style="width:330px">
           <input class="form-check-input" type="radio" name="price" id="less1000" value="low">
- 
+
           <label class="form-check-label" for="less1000" style="width:330px">
             <b>Low To High</b>
           </label>
@@ -384,18 +389,18 @@
           <b>High To Low</b>
           </label>
         </div>
- 
- 
+
+
         </ul></div>
- 
- 
- 
+
+
+
         <!------------location------------------->
- 
+
         <button type="button" class="btn btn-primary btn-sm" id="loc"style="width:330px">LOCATION</button>
         <div style="border-style:groove;width:330px">
         <ul class="list-group" id="location_list" style="width:330px">
- 
+
         <% for (const n in location){ %>
         <div class="form-check" style="width:330px">
           <input class="form-check-input" type="radio" name="vendorlocation" id="Jaipur" value=<%=location[n]%>>
@@ -404,9 +409,9 @@
           </label>
         </div>
           <%}%>
- 
- 
- 
+
+
+
         </ul></div>
         <input type="submit" class="btn btn-primary btn-md"  name="" id="" style="width:330px">
         <!------------------------------------------>
@@ -417,7 +422,7 @@
         <div id="swipe">
         <div class="swiper-container">
           <div class="swiper-wrapper">
- 
+
               <div class="swiper-slide">
                   <div class="imgBx">
                       <img src="/images/stonner.jpg">
@@ -426,7 +431,7 @@
                       <h3>STONNER<br><span>ABC</span></h3>
                   </div>
               </div>
- 
+
               <div class="swiper-slide">
                   <div class="imgBx">
                       <img src="\images\environ.jpg">
@@ -435,7 +440,7 @@
                       <h3>ENVIRON<br><span>XYZ</span></h3>
                   </div>
               </div>
- 
+
               <div class="swiper-slide">
                   <div class="imgBx">
                       <img src="\images\harvest1.jpg">
@@ -444,7 +449,7 @@
                       <h3>HARVEST 1<br><span>ABC</span></h3>
                   </div>
               </div>
- 
+
               <div class="swiper-slide">
                   <div class="imgBx">
                       <img src="/images/ewos-ultra.jpg">
@@ -453,7 +458,7 @@
                       <h3>EWOS ULTRA GROWER<br><span>XYZ</span></h3>
                   </div>
               </div>
- 
+
               <div class="swiper-slide">
                 <div class="imgBx">
                     <img src="/images/pro.jpg">
@@ -462,7 +467,7 @@
                     <h3>PRO SENSE<br><span>XYZ</span></h3>
                 </div>
               </div>
- 
+
               <div class="swiper-slide">
                 <div class="imgBx">
                     <img src="/images/residental.jpg">
@@ -471,7 +476,7 @@
                     <h3>RESIDENTAL AQUARIUM<br><span>XYZ</span></h3>
                 </div>
               </div>
- 
+
               <div class="swiper-slide">
                 <div class="imgBx">
                     <img src="\images\harvest3s.jpg">
@@ -480,7 +485,7 @@
                     <h3>HARVEST 3s<br><span>ABC</span></h3>
                 </div>
              </div>
- 
+
           </div>
             <!-- Add Pagination -->
           <div class="swiper-pagination"></div>
@@ -505,11 +510,11 @@
     </div>
       <!---------------footer------------->
 <footer class="footer-distributed">
- 
+
   <div class="footer-left">
- 
+
     <h3><span>Jaljeevika</span></h3>
- 
+
     <p class="footer-links">
       <a href="/dashboard">Home</a>
       ·
@@ -523,59 +528,59 @@
       ·
       <a href="/users/logout">Logout</a>
     </p>
- 
+
     <p class="footer-company-name">Jaljeevika &copy; 2020</p>
   </div>
- 
+
   <div class="footer-center">
- 
+
     <div>
       <i class="fa fa-map-marker"></i>
       <p><span>Jambhualkar Chowk,Wanowari</span> Pune,India</p>
     </div>
- 
+
     <div>
       <i class="fa fa-phone"></i>
       <p>411040</p>
     </div>
- 
+
     <div>
       <i class="fa fa-envelope"></i>
       <p><a href="mailto:support@company.com">info@jaljeevika.org</a></p>
     </div>
- 
+
   </div>
- 
+
   <div class="footer-right">
- 
+
     <p class="footer-company-about">
       <span>About the company</span>
       Centre for Aquatic Livelihood Jaljeevika is addressing the issue of small-scale fish farmers, building community resilience and capacity to enhance livelihood opportunities using existing water bodies, technology and leveraging institutions.
     </p>
- 
+
     <div class="footer-icons">
- 
+
       <a href="#"><i class="fab fa-facebook-square"></i></a>
       <a href="#"><i class="fab fa-twitter-square"></i></a>
       <a href="#"><i class="fab fa-linkedin"></i></a>
       <a href="#"><i class="fab fa-github"></i></a>
- 
- 
+
+
     </div>
- 
+
   </div>
- 
+
 </footer>
   <script>
- 
+
     $(document).ready(function(){
         $("#comp").click(function(){
         $("#comp_list").slideToggle("slow");
         });
     });
- 
- 
- 
+
+
+
     //For search bar filtering
     $(document).ready(function(){
         $("#myInput").on("keyup", function() {
@@ -585,7 +590,7 @@
         });
         });
         });
- 
+
     //For dropdown items selection
     $(document).ready(function()
         {
@@ -595,9 +600,9 @@
         $("#myInput").val($(this).text());
         });
         });
- 
- 
- 
+
+
+
     //JS CODE FOR PRODUCT FILTERING (MOST IMPORTANT)
     filterSelection("allproduct")
     function filterSelection(c) {
@@ -609,7 +614,7 @@
         if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
         }
     }
- 
+
     function w3AddClass(element, name) {
         var i, arr1, arr2;
         arr1 = element.className.split(" ");
@@ -618,14 +623,14 @@
         if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
         }
     }
- 
+
     function w3RemoveClass(element, name) {
         var i, arr1, arr2;
         arr1 = element.className.split(" ");
         arr2 = name.split(" ");
         for (i = 0; i < arr2.length; i++) {
         while (arr1.indexOf(arr2[i]) > -1) {
-            arr1.splice(arr1.indexOf(arr2[i]), 1);     
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
         }
         }
         element.className = arr1.join(" ");
@@ -643,8 +648,8 @@
     $(document).ready(function(){
     $("#cat_list").hide();
     });
- 
- 
+
+
     $(document).ready(function(){
   $("#compan").click(function(){
     $("#compan_list").slideToggle("fast");
@@ -676,7 +681,7 @@ $(obj).stop().fadeTo('fast', opacity);
 //for featured products
 var textWrapper = document.querySelector('.ml1 .letters');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
- 
+
 anime.timeline({loop: true})
   .add({
     targets: '.ml1 .letter',
