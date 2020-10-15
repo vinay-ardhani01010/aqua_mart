@@ -2,16 +2,9 @@ const router = require('express').Router();
 let Product = require('../models/product.model');
 const mainController = require('../controllers/main');
 const isUser = require('../middleware/is-user');
-<<<<<<< HEAD
 const productControllers = require('../controllers/product-controllers');
 
 
-=======
-//ADD PODUCTS
-router.route('/additem').get((req,res)=>{
-    res.render('addproduct.ejs')
-})
->>>>>>> 8925c2c1fbf8150046127d251b0944880c56d215
 router.route('/add').post((req, res) => {
     const name = req.body.name;
     const vendorid = req.session.user._id;
