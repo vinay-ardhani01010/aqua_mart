@@ -231,5 +231,8 @@ router.get('/filter',(req, res)=>{
       )
     }
   })
+router.get('/analysis',(req,res)=>{
+  res.render('analysis');
+})
   
 module.exports = router;
