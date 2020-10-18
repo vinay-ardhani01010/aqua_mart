@@ -16,5 +16,9 @@ router.post('/register', authController.postSignup);
 
 //logout routes
 router.get('/logout', isUser, authController.logout);
+router.get('/usersForAdmin',(req,res)=>{
+    //some backend work to be done here 
+    res.send('users list');
+})
 
 module.exports = router;
