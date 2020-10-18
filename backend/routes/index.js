@@ -20,6 +20,10 @@ router.get('/', (req, res) => res.render('logreg'));
 //       });
 //   });
 // });
+// admin dashboard
+router.route('/dashboardAdmin').get((req,res)=>{
+  res.render('dashboardmain');
+})
 router.route('/dashboard').get(isUser,(req, res) => { 
   Product.find({isAuthorised: true}, function(err, data){
     Product.find().distinct('category', function(error, category) {
