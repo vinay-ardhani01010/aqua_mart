@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/user.model')
 const authController = require('../controllers/users');
 const isUser = require('../middleware/is-user');
 
@@ -18,7 +19,11 @@ router.post('/register', authController.postSignup);
 router.get('/logout', isUser, authController.logout);
 router.get('/usersForAdmin',(req,res)=>{
     //some backend work to be done here 
-    res.send('users list');
+    User.find({})
+    .then((users)=>{
+        return res.render('listofuser',{users});
+    }).catch((error)=>console.log(error));
+    
 })
 
 module.exports = router;
