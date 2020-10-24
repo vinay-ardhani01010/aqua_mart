@@ -53,7 +53,24 @@
 .col-sm-8,.col-sm-2{
     background:#3383FF;
   }
- </style>
+
+  table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: blanchedalmond;
+  color: black;
+}
+tr:nth-child(odd) {
+background-color: rgb(233, 179, 179);
+}
+</style>
 </head>
 <body onload="filterSelection('1')" style="font-family:candara"></body>
 <div class=" row"  >
@@ -85,11 +102,25 @@
       <div class="col-sm-2 pt-4">
         <a href="/users/logout" class="ghost-button2" id="logout"><i class='fas fa-user-alt' style="font-size: 20px; color:white">
         </i><font style="font-size: 20px; color: white">  Logout</font></a>
-          <div class="col-sm-2 pt-4">
-            <a href="/products/additem" class="ghost-button2 pr-2" style = "width:170px; " id="add"><i class="fa fa-plus"  style="font-size: 20px; color:white">
-          </i><font style="font-size: 20px; color: white">ADD</font></a>
-
-        </div>
+          
       </div>
-
       
+      <table>
+        <tr>
+          <th>Vendor Name</th>
+          <th>Vendor Email</th>
+          <th>Vendor Phone No.</th>
+          <th>Vendor Address</th>
+        </tr>
+         <% vendors.forEach(vendor=>{ %>
+        <tr>
+               <td><%= vendor.vendorname %></td>
+                <td><%= vendor.email %></td>
+                <td><%= vendor.phone %></td>
+                <td><%= vendor.address1 %></td>
+              </tr> 
+       <%})%>
+      
+      </table>
+
+    
