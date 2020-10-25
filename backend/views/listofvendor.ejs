@@ -68,7 +68,7 @@ th {
   color: black;
 }
 tr:nth-child(odd) {
-background-color: rgb(233, 179, 179);
+background-color: rgb(191, 240, 193)
 }
 </style>
 </head>
@@ -114,7 +114,7 @@ background-color: rgb(233, 179, 179);
         </tr>
          <% vendors.forEach(vendor=>{ %>
         <tr>
-               <td><%= vendor.vendorname %></td>
+               <td><a href = "/products/vendorProducts/"><%= vendor.vendorname %></a></td>
                 <td><%= vendor.email %></td>
                 <td><%= vendor.phone %></td>
                 <td><%= vendor.address1 %></td>
