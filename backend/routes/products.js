@@ -4,7 +4,9 @@ const mainController = require('../controllers/main');
 const isUser = require('../middleware/is-user');
 const productControllers = require('../controllers/product-controllers');
 
-
+router.route('/additem').get((req,res)=>{
+    res.render('addproduct.ejs')
+})
 router.route('/add').post((req, res) => {
     const name = req.body.name;
     const vendorid = req.session.user._id;
