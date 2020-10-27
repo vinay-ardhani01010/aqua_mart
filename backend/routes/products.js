@@ -9,7 +9,7 @@ router.route('/additem').get((req,res)=>{
 })
 router.route('/add').post((req, res) => {
     const name = req.body.name;
-    const vendorid = req.session.user._id;
+    const vendorid = req.session._id;
     const description = req.body.description;
     const price = Number(req.body.price);
     const vendorname = req.body.vendorname;
