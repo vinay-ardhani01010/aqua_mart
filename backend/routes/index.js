@@ -232,7 +232,7 @@ router.get('/filter',(req, res)=>{
     }
   })
 router.get('/analysis',(req,res)=>{
-  res.render('analysis');
+  res.render('dashboardmain');
 })
   
 module.exports = router;

@@ -70,6 +70,34 @@ th {
 tr:nth-child(odd) {
 background-color: rgb(191, 240, 193);
 }
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+#button1{
+width: 415px;
+height: 50px;
+
+}
+#button2{
+width: 415px;
+height: 50px;
+background-color: #4CAF50;
+}
+#button3{
+width: 415px;
+height: 50px;
+
+}
+#button4{
+width: 430px;
+height: 50px;
+}
+
+#button1 , #button2,#button3,#button4 {
+display:inline-block;
+
+}
 </style>
 </head>
 <body onload="filterSelection('1')" style="font-family:candara"></body>
@@ -83,7 +111,7 @@ background-color: rgb(191, 240, 193);
         <a href="/"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">HOME</b></button></a>
       </div>
       <div class = " ">
-        <a href="/dashboard"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">DASHBOARD</b></button></a>
+        <a href="/dashboardAdmin"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">DASHBOARD</b></button></a>
       </div>
       <div class = "">
         <div class="dropdown col m mt-4">
@@ -104,6 +132,22 @@ background-color: rgb(191, 240, 193);
         </i><font style="font-size: 20px; color: white">  Logout</font></a>
           
       </div>
+      <div class = "row">
+        <div>
+        <a href="/vendor/vendorsForAdmin"> <button type="button" class="btn1 success" id="button1" style="font-size: 20px;"><b style="color: black;">Vendors</b></button></a>
+    </div>
+    <div>
+        <a href="/users/usersForAdmin" > <button type="button" class="btn1 success"  id="button2" style="font-size: 20px;"><b style="color: black;">Users</b></button></a>
+  </div>
+  <div>
+    <a href="/analysis" > <button type="button" class="btn1 success" id="button3" style="font-size: 20px;"><b style="color:black;">Analysis</b></button></a>
+  </div>
+  <div>
+    <a href="/messages/showmessages"><button type="button" class="btn1 success" id="button4"  style="font-size: 20px;"><b style="color:black;">Messages</b></button></a>
+  </div>
+  
+  
+  </div>
       
       <table>
         <tr>
