@@ -57,10 +57,52 @@
 }
 .col-sm-8,.col-sm-2{
     background:#3383FF;
-  }
+  
+}
+.btn1 {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+#button1{
+width: 386px;
+height: 50px;
+
+}
+#button2{
+width: 386px;
+height: 50px;
+}
+#button3{
+width: 386px;
+height: 50px;
+
+}
+#button4{
+width: 386px;
+height: 50px;
+}
+
+#button1 , #button2,#button3,#button4 {
+display:inline-block;
+
+}
+  
  </style>
 </head>
-<body onload="filterSelection('1')" style="font-family:candara"></body>
+<body onload="filterSelection('1')" style="font-family:candara">
 <div class=" row"  >
     <div class="col-sm-2">
      <img src="/images/logo.jpg" id="logo">
@@ -90,53 +132,27 @@
       <div class="col-sm-2 pt-4">
         <a href="/users/logout" class="ghost-button2" id="logout"><i class='fas fa-user-alt' style="font-size: 20px; color:white">
         </i><font style="font-size: 20px; color: white">  Logout</font></a>
-          <div class="col-sm-2 pt-4">
-            <a href="/products/additem" class="ghost-button2 pr-2" style = "width:170px; " id="add"><i class="fa fa-plus"  style="font-size: 20px; color:white">
-          </i><font style="font-size: 20px; color: white">ADD</font></a>
+          
+      </div>
+      
+  <div class = "row">
+      <div>
+      <a href="/vendor/vendorsForAdmin"> <button type="button" class="btn1 success" id="button1" style="font-size: 20px;"><b style="color: black;">Vendors</b></button></a>
+  </div>
+  <div>
+      <a href="/users/usersForAdmin" > <button type="button" class="btn1 success"  id="button2" style="font-size: 20px;"><b style="color: black;">Users</b></button></a>
+</div>
+<div>
+  <a href="/analysis" > <button type="button" class="btn1 success" id="button3" style="font-size: 20px;"><b style="color:black;">Analysis</b></button></a>
+</div>
+<div>
+  <a href="/messages/showmessages"><button type="button" class="btn1 success" id="button4"  style="font-size: 20px;"><b style="color:black;">Messages</b></button></a>
+</div>
 
-        </div>
-      </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <div class="vendor ">
-            <a href="/vendor/vendorsForAdmin" class="btn btn-info " role="button">Vendors</a>
-          </div>  
-        </div>
-        <div class="col-lg-3">
-          <div class="user ">
-            <a href="/users/usersForAdmin" class="btn btn-info " role="button">Users</a>
-          </div>  
-        </div>
-        <div class="col-lg-3">
-          <div class="Analysis ">
-            <a href="/analysis" class="btn btn-info" role="button ">Analysis</a>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="Messages ">
-            <a href="/messages/showmessages" class="btn btn-info " role="button">Messages</a>
-          </div>    
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <button class="btn btn-info">No.of Vendors Registered</button>
-        </div>
-        <div class="col-sm">
-          <button class="btn btn-info">No.of users Registered</button>
-        </div>
-        <div class="col-sm">
-          <button class="btn btn-info">User Research per day</button>
-        </div>
-        <div class="col-sm"> 
-          <button class="btn btn-info">Total No.of Product</button>
-        </div>
-      </div>
-    </div> 
-    
-   
-  
+
+</div>
+
+
 </body>
 </html>
   
