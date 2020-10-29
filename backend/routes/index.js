@@ -5,7 +5,10 @@ const isVendor = require('../middleware/is-vendor');
 const isAdmin = require('../middleware/is-admin');
 const apiMain = require('./api-main');
 let Product = require('../models/product.model');
+let Users = require('../models/user.model');
+let Vendors = require('../models/Vendor');
 const path = require('path');
+const { getVendorsForAdmin } = require('../controllers/vendor');
 const app = express()
 
 // Welcome Page
@@ -22,7 +25,17 @@ router.get('/', (req, res) => res.render('logreg'));
 // });
 // admin dashboard
 router.route('/dashboardAdmin').get((req,res)=>{
-  res.render('dashboardmain');
+  Product.find({})
+  .then(products =>{
+    Users.find({})
+    .then(users =>{
+      Vendors.find({})
+      .then(vendors =>{
+        res.render('dashboardmain',{products,users,vendors});
+      })
+    })
+  })
+  
 })
 router.route('/dashboard').get(isUser,(req, res) => { 
   Product.find({isAuthorised: true}, function(err, data){
@@ -232,7 +245,16 @@ router.get('/filter',(req, res)=>{
     }
   })
 router.get('/analysis',(req,res)=>{
-  res.render('dashboardmain');
+  Product.find({})
+  .then(products =>{
+    Users.find({})
+    .then(users =>{
+      Vendors.find({})
+      .then(vendors =>{
+        res.render('dashboardmain',{products,users,vendors});
+      })
+    })
+  })
 })
   
 module.exports = router;

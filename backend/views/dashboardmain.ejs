@@ -77,21 +77,21 @@
   color: white;
 }
 #button1{
-width: 380px;
+width: 420px;
 height: 50px;
 
 }
 #button2{
-width: 380px;
+width: 420px;
 height: 50px;
 }
 #button3{
-width: 380px;
+width: 420px;
 height: 50px;
 
 }
 #button4{
-width: 380px;
+width: 440px;
 height: 50px;
 }
 
@@ -163,6 +163,10 @@ body{
    .tbody { 
      border-top: 25px; 
    } 
+   .con{
+    width:100%;
+     height:100%
+   }
  </style>
 </head>
 <body onload="filterSelection('1')" style="font-family:candara">
@@ -176,11 +180,11 @@ body{
         <a href="/"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">HOME</b></button></a>
       </div>
       <div class = " ">
-        <a href="/dashboard"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">DASHBOARD</b></button></a>
+        <a href="/dashboardAdmin"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color:burlywood;">DASHBOARD</b></button></a>
       </div>
       <div class = "">
         <div class="dropdown col m mt-4">
-          <button class="btn btn-primary dropdown-toggle mt-2" type="button" data-toggle="dropdown">PRODUCTS
+          <button class="btn btn-primary dropdown-toggle mt-2" type="button" data-toggle="dropdown">MANAGE PRODUCTS
           <span class="caret"></span></button>
           <ul class="dropdown-menu">
             <li><a href="/authproducts">Authorized</a></li>
@@ -214,15 +218,15 @@ body{
 
 </div>
 </br>
-<table> 
+<table class = "con"> 
      <tbody class="tbody"> 
        <tr> 
-         <td><a href=""> <button type="button" class="btn2 " id="b1" style="font-size: 20px;"><b style="color:whitesmoke;">No of Vendor Registered <br>0</b></button></a></td> 
-         <td><a href=""> <button type="button" class="btn2 " id="b1" style="font-size: 20px;"><b style="color:whitesmoke;">No of Users Registered <br>0</b></button></a></td> 
+         <td><a href=""> <button type="button" class="btn2 " id="b1" style="font-size: 20px;"><b style="color:whitesmoke;">No of Vendor Registered <br><span style = "font-size:70px;"><%=vendors.length%></span></b></button></a></td> 
+         <td><a href=""> <button type="button" class="btn2 " id="b1" style="font-size: 20px;"><b style="color:whitesmoke;">No of Users Registered <br><span style = "font-size:70px;"><%=users.length%></span></b></button></a></td> 
      
-         <td><a href=""> <button type="button" class="btn2 " id="b1" style="font-size: 20px;"><b style="color:whitesmoke;">Users Reach per day <br>0</b></button></a></td> 
+         <td><a href=""> <button type="button" class="btn2 " id="b1" style="font-size: 20px;"><b style="color:whitesmoke;">Users Reach per day <br><span style = "font-size:70px;">0</span></b></button></a></td> 
           
-         <td><a href=""> <button type="button" class="btn2 " id="b1" style="font-size: 20px;"><b style="color:whitesmoke;">Total No of Product<br>0</b></button></a></td> 
+         <td><a href=""> <button type="button" class="btn2 " id="b1" style="font-size: 20px;"><b style="color:whitesmoke;">Total No of Product<br><span style = "font-size:70px;"><%=products.length%></span></b></button></a></td> 
       
        </tr> 
      </tbody> 
