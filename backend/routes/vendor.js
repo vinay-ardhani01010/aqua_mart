@@ -32,12 +32,12 @@ router.get('/addProduct', authController.getAddProduct);
 router.get('/myProducts', authController.getProducts);
 
 // Mesages
-router.get('/getunseen',(req, res)=>{
+/*router.get('/getunseen',(req, res)=>{
     Message.find({seen :0, receiver : req.user.sessions._id},(err, data)=>{
         console.log(data.length)
         res.status(200).send(data.length.toString())
      });
-});
+});*/
 
 //list of vendors for admin
 router.get('/vendorsForAdmin',vendorsControllers.getVendorsForAdmin);
@@ -46,7 +46,16 @@ router.get('/prod/:name',(req,res)=>{
     Product.find({vendorname : req.params.name})
     .then(list =>{
        res.render('vendorprodlist',{list});
+      
     })
 })
-
+router.get('/authvendor',(req,res)=>{
+    Product.find({isAuthorize : true})
+    .then(list =>{
+        res.render('authForvendor',{list});
+    })
+})
+router.get('/dashboardVendor',(req,res)=>{
+    res.render('dashboardvendor')
+})
 module.exports = router;

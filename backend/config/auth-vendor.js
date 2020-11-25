@@ -1,6 +1,7 @@
 module.exports = {
     vensureAuthenticated: function(req, res, next) {
       if (req.isAuthenticated()) {
+      
         return next();
       }
       req.flash('error_msg', 'Please log in to view that resource');
@@ -10,6 +11,6 @@ module.exports = {
       if (!req.isAuthenticated()) {
         return next();
       }
-      res.redirect('/vendordashboard');      
+      res.redirect('/vendordashboad');      
     }
   };

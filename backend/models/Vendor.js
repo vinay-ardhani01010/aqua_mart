@@ -8,6 +8,7 @@ const VendorSchema = new Schema({
     email: {type: String, required: true},
     phone: {type: Number, required: true},
     password:{type: String, required: true},
+    imgurl: {type: String, default:"harvest1"},
     gst:{type:String},
     pancard:{type:String},
     address1: {type: String, required: true},

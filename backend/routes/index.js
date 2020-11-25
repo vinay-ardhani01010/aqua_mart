@@ -96,7 +96,7 @@ router.route('/admindashboard').get(isUser,(req, res) => {
 });
 //ADMIN DASHBOARD AUTH PRODUCTS
 
-router.route('/authproducts').get(isUser,(req, res) => { 
+router.route('/authproducts').get((req, res) => { 
   Product.find({isAuthorised: true}, function(err, data){
     Product.find().distinct('category', function(error, category) {
       Product.find().distinct('brand', function(error, brand) {
@@ -135,7 +135,10 @@ router.route('/unauthproducts').get(isUser,(req, res) => {
 });
 
 // Vendor Dashboard
-router.get('/vendordashboard',isVendor, (req, res) => res.render('Vendordashboard'));
+router.get('/vendordashboard',isVendor, (req, res) =>{
+  res.render('vendorpage');
+})
+
 
 // Services
 router.get('/services', isUser, (req, res) => res.render('services'));
