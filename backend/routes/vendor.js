@@ -55,7 +55,16 @@ router.get('/authvendor',(req,res)=>{
         res.render('authForvendor',{list});
     })
 })
-router.get('/dashboardVendor',(req,res)=>{
-    res.render('dashboardvendor')
+router.get('/dashboardVendor/:name',(req,res)=>{
+   Product.find({vendorname:req.params.name})
+   .then(products =>{
+       var count = 0;
+       for( const i in products){
+       if(products[i].isAuthorised){
+           count+=1;
+       }
+       }
+    res.render('dashboardvendor',{products,count})
+   })
 })
 module.exports = router;

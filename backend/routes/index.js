@@ -135,8 +135,19 @@ router.route('/unauthproducts').get(isUser,(req, res) => {
 });
 
 // Vendor Dashboard
-router.get('/vendordashboard',isVendor, (req, res) =>{
-  res.render('vendorpage');
+router.get('/vendordashboard/:mail',isVendor, (req, res) =>{
+ Vendors.find({email:req.params.mail})
+ .then(vendor =>{
+   //res.render('vendorpage',{vendor})
+   Product.find({vendorname:vendor[0].name})
+   .then(products=>{
+     console.log(products)
+     res.render('vendorpage',{vendor,products})
+     
+   })
+   
+ })
+ //console.log(req.params.mail)
 })
 
 

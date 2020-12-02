@@ -6,6 +6,7 @@ const router = require('../routes/chat');
 const { data } = require('jquery');
 
 exports.getHome = (req, res, next) => {
+    console.log();
 	res.render('vendorhome',{
 		title: ' Vendor Home',
 		path: '/vendor/'
@@ -180,7 +181,8 @@ exports.postSignup = (req, res, next) => {
 
 exports.postLogin = (req, res, next) => {
 	const email = req.body.email;
-	const password = req.body.password;
+    const password = req.body.password;
+  
 	Vendor.findOne({ email: email})
 		.then(user => {
 			if(!user){
@@ -198,7 +200,7 @@ exports.postLogin = (req, res, next) => {
 						return req.session.save(err => {
 							console.log(err);
 							req.flash('error', err);
-							res.redirect('/vendordashboard');
+							res.redirect('/vendordashboard/'+email);
 						});
 					}
 					console.log('Invalid email or password!');
