@@ -40,7 +40,7 @@
             <% products.forEach(product => { %>
               <div class="card--featured col-lg-3 col-sm-6 d-flex justify-content-center mt-4" onclick="javascript:location.href= '/product/<%= products._id %>'">
                 <div class="card shadow" style="width: 18rem;" onmouseover="hovered(this)" onmouseout="removed(this)">
-                  <img src="https://pumpsolutions.com.au/wp-content/uploads/2015/10/centrifugal-pump-industrial-commerical-application.jpg" style="width:100%"  id="p1">
+                  <img src=<%= product.imgurl %> style="width:100%"  id="p1">
                   <h4><center><%= product.name %></center></h4>
                   <center><%= product.vendorname %></center>
                 </div>

@@ -8,7 +8,7 @@ const productSchema = new Schema({
     description: {type: String, required: true},
     price: {type: Number, required: true},
     vendorname: {type: String, required: true},
-    imgurl: {type: String, default:"harvest1"},
+    imgurl: {type: String},
     category: {type: String, required: true},
     brand: {type: String, required: true},
     vendorlocation:{type: String, required: true},
