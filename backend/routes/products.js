@@ -33,7 +33,7 @@ router.route('/add').post((req, res) => {
     });
 
     newProduct.save()
-        .then(() => res.render('addproduct'))
+        .then(() => res.send("product added sucessfully"))
         .catch(err => res.status(400).json('Error: '+ err));
 });
 

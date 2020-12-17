@@ -67,4 +67,7 @@ router.get('/dashboardVendor/:name',(req,res)=>{
     res.render('dashboardvendor',{products,count})
    })
 })
+router.route('/dashboardVendor/vendor/additem').get((req,res)=>{
+    res.render('addproductvendor.ejs')
+})
 module.exports = router;

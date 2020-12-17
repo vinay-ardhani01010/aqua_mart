@@ -38,7 +38,7 @@
         <div class="products">
           <div class="row">
             <% products.forEach(product => { %>
-              <div class="card--featured col-lg-3 col-sm-6 d-flex justify-content-center mt-4" onclick="javascript:location.href= '/product/<%= products._id %>'">
+              <div class="card--featured col-lg-3 col-sm-6 d-flex justify-content-center mt-4" onclick="javascript:location.href= '/products/<%= product._id %>'">
                 <div class="card shadow" style="width: 18rem;" onmouseover="hovered(this)" onmouseout="removed(this)">
                   <img src=<%= product.imgurl %> style="width:100%"  id="p1">
                   <h4><center><%= product.name %></center></h4>
