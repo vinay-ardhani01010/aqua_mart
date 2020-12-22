@@ -7,7 +7,7 @@ let Product = require('../models/product.model');
 const vendorsControllers = require('../controllers/vendor');
 
 //Vendor home route
-router.get('/', authController.getHome);
+router.get('/', authController.getHome) ;
 
 //login routes
 router.get('/login', authController.getLogin);
