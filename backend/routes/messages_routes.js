@@ -12,7 +12,7 @@ router.post("/sendmessage",(req,res)=>{
  const  newMessage = new MessageSchema({
      status,
      message
- });
+ }) ;
   newMessage.save()
         .then(() => console.log("added"))
         .catch(err => res.status(400).json('Error: '+ err));
