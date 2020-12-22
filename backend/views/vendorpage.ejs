@@ -16,43 +16,217 @@
   <link rel="stylesheet" type="text/css" href="/css/swipercss.css">
   <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
- 
-  <% for (var l = vendor.length, i = 0; i < l; i++) { %>
-    <% object = vendor[i]%>
-    <p><h3>vendor name: <%= object.vendorname%></h3>
-    <p><h3>vendor mail : <%= object.email %></h3></p>
-    <p><h3>vendor phone : <%= object.phone %></h3></p>
-    <p><h3>vendor landmark : <%= object.landmark %></h3></p>
-    <p><h3>vendor state : <%= object.state %></h3></p>
-    <p><h3>vendor country : <%= object.country %></h3></p>
-    
-    <% break %>
-<% } %>
+  <title>Vendor_Page</title>
+  <style>
+      .col-sm-8,.col-sm-2{
+  background:#3383FF;
+}
+.r{
+  background:#3383FF;
+}
+.ghost-button2 {
+      display: inline-block;
+      width: 150px;
+      padding: 8px;
+      color:black;
+      border: 1.5px solid black;
+      text-align: center;
+      outline: none;
+      text-decoration: none;
+    }
+#my_header{
+  display:table;
+  margin:auto;
+}
+#my_header_div{
+  display:table-cell;
+}
+.container{
+padding: 2px;
+text-align: Justify;
+ width: 320px;
+height: 50px;
+display: inline-block;
+}
+.container1{
+padding: 4px;
+text-align: Justify;
+ width: 350px;
+height: 50px;
+display: inline-block;
+}
+#outter{
+border-bottom:solid 2px blue;
+padding:2px;
+}
+.col-sm-8,.col-sm-2{
+  background:#3383FF;
 
-<h2> Vendor Products :</h2>
-<br>
-<%if (products.length == 0) { %>
-    <p>No products to show...</p>
-    <% } %>
-    <div id='product-view'>
-        <div class="products">
-          <div class="row">
-            <% products.forEach(product => { %>
-              <div class="card--featured col-lg-3 col-sm-6 d-flex justify-content-center mt-4" onclick="javascript:location.href= '/products/<%= product._id %>'">
-                <div class="card shadow" style="width: 18rem;" onmouseover="hovered(this)" onmouseout="removed(this)">
-                  <img src=<%= product.imgurl %> style="width:100%"  id="p1">
-                  <h4><center><%= product.name %></center></h4>
-                  <center><%= product.vendorname %></center>
-                </div>
-              </div>
-            <% }) %>
-          </div>
-        </div>
-       </div>
-     </div>
-   </div>
+}
+.btn1 {
+border: 2px solid black;
+background-color: white;
+color: black;
+padding: 14px 28px;
+font-size: 16px;
+cursor: pointer;
+}
+.success {
+border-color: #4CAF50;
+color: green;
+}
+
+.success:hover {
+background-color: #4CAF50;
+color: white;
+}
+
+#button3{
+width: 500px;
+height: 50px;
+
+}
+#button4{
+width: 500px;
+height: 50px;
+}
+
+#button1,#button2,#button3,#button4 {
+display:inline-block;
+
+}
+.btn1 {
+border: 2px solid black;
+background-color: white;
+color: black;
+padding: 14px 28px;
+font-size: 16px;
+cursor: pointer;
+}
+.b_analysis {
+background-color: #4CAF50; /* Green */
+border: 2px solid black;
+color: black;
+padding: 14px 28px;
+font-size: 16px;
+cursor: pointer;
+
+}
+.btn2 {
+background-color: #3383FF;
+border: 2px solid black;
+color: black;
+padding: 14px 28px;
+font-size: 16px;
+cursor: pointer;
+
+}
+
+#b1{
+width: 200px;
+height: 200px;
+
+
+}
+#b2{
+width: 200px;
+height: 200px;
+}
+#b3{
+width: 200px;
+height: 200px;
+
+}
+#b4{
+width: 200px;
+height: 200px;
+}
+
+#b3 , #b2,#b1 {
+display:inline-block;
+
+}
+body{ 
+   color: #fff; 
+   font-size:20px; 
+ } 
+
+ table td{ 
+   padding: 90px; 
+   background-color:white; 
+ } 
+ .tbody { 
+   border-top: 25px; 
+ } 
+ .con{
+  width:100%;
+   height:100%
+ }
+</style>
+</head>
+<body onload="filterSelection('1')" style="font-family:candara">
+<div class=" row"  >
+  <div class="col-sm-2">
+   <img src="/images/logo.jpg" id="logo">
   </div>
-  <a href = "/vendor/dashboardVendor/<%= products[0].vendorname %>">dashboard</a>
+  <div class="col-sm-8 pt-3">
+  <div class = "row">
+    <div class = " ">
+      <a href="/"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color: white;">HOME</b></button></a>
+    </div>
+    <div class = "">
+      <div class="dropdown col m mt-4">
+        <button class="btn btn-primary dropdown-toggle mt-2" type="button" data-toggle="dropdown">MANAGE PRODUCTS
+        <span class="caret"></span></button>
+        
+          
+        </ul>
+      </div>
+    </div>
+    <div class = " ">
+      <a href="/vendor/dashboardVendor/<%= products[0].vendorname %>"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color:whitesmoke;">DASHBOARD</b></button></a>
+    </div>
+    
 
+  </div>
+
+  </div>
+    <div class="col-sm-2 pt-4">
+      <a href="/users/logout" class="ghost-button2" id="logout"><i class='fas fa-user-alt' style="font-size: 20px; color:white">
+      </i><font style="font-size: 20px; color: white">  Logout</font></a>
+        
+    </div>
+    </div>
+    
+  <div class = "row">
+    <div>
+      <a href="vendor/authVendor" > <button type="button" class="b_analysis" id="button3" style="font-size: 20px;"><b style="color:black;">Authorized</b></button></a>
+    </div>
+    <div>
+      <a href="vendor/dashboardVendor/vendor/additem"><button type="button" class="btn1 success" id="button4"  style="font-size: 20px;"><b style="color:black;">Add Products</b></button></a>
+    </div>
+</div>  
+
+<%if (products.length == 0) { %>
+  <p>No products to show...</p>
+  <% } %>
+  <div id='product-view'>
+      <div class="products">
+        <div class="row">
+          <% products.forEach(product => { %>
+            <div class="card--featured col-lg-3 col-sm-6 d-flex justify-content-center mt-4" onclick="javascript:location.href= '/product/<%= products._id %>'">
+              <div class="card shadow" style="width: 18rem;" onmouseover="hovered(this)" onmouseout="removed(this)">
+                <img src="https://pumpsolutions.com.au/wp-content/uploads/2015/10/centrifugal-pump-industrial-commerical-application.jpg" style="width:100%"  id="p1"><% for (var l = vendor.length, i = 0; i < l; i++) { %>
+                  <% object = vendor[i]%>
+                 
+                  <% break %>
+              <% } %>
+              
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+     </div>
 </body>
 </html>
