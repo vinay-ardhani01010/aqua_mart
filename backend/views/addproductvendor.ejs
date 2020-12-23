@@ -17,8 +17,42 @@
 <!-- /css files -->
 <link href="/css/wickedpicker.css" rel="stylesheet" type='text/css' media="all" />
 <script type="text/javascript" src="/js/jquery-2.1.4.min.js"></script>
+<style>
+	.col-sm-8,.col-sm-2{
+background:#3383FF;
+}
+
+.ghost-button2 {
+        display: inline-block;
+        width: 150px;
+        padding: 8px;
+        color:black;
+        border: 1.5px solid black;
+        text-align: center;
+        outline: none;
+        text-decoration: none;
+      }
+</style>
 </head>
 <body>
+	<div class="col-sm-8 pt-3">
+		<table>
+			<tr> 
+				<td>
+			<a href="/"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color:black;">HOME</b></button></a>
+		</td>
+		<td>
+		<a href="vendor/dashboardVendor"><button type="button" class="btn btn-default" id="home" style="font-size: 20px;"><b style="color:blue;">DASHBOARD</b></button></a>
+		
+		</td>
+		<td>
+		  <div class="col-sm-2 pt-4">
+			<a href="/users/logout" class="ghost-button2" id="logout"><i class='fas fa-user-alt' style="font-size: 20px; color:white">
+			</i><font style="font-size: 20px; color: white">  Logout</font></a>
+		</td>
+		</tr>
+		</table>
+			  
 	<div class="banner-main">
 		<div class="center-container">
 			<h1 class="header" style="text-align: center; padding-top:20px; font-size:20px;">ADD PRODUCT (vendor)</h1>
